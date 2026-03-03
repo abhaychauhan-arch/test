@@ -1,98 +1,98 @@
 view: orders {
-  sql_table_name: `PUBLIC`.`ORDERS`;;
+  sql_table_name: default.`orders`;;
   drill_fields: [order_id]
 
   dimension: order_id {
     primary_key: yes
     type: string
-    sql: ${TABLE}."ORDER_ID" ;;
+    sql: ${TABLE}.`Order ID` ;;
   }
   dimension: category {
     type: string
-    sql: ${TABLE}."CATEGORY" ;;
+    sql: ${TABLE}.`Category` ;;
   }
   dimension: city {
     type: string
-    sql: ${TABLE}."CITY" ;;
+    sql: ${TABLE}.`City` ;;
   }
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}."COUNTRY" ;;
+    sql: ${TABLE}.`Country` ;;
   }
   dimension: customer_id {
     type: string
-    sql: ${TABLE}."CUSTOMER_ID" ;;
+    sql: ${TABLE}.`Customer Id` ;;
   }
   dimension: customer_name {
     type: string
-    sql: ${TABLE}."CUSTOMER_NAME" ;;
+    sql: ${TABLE}.`Customer Name` ;;
   }
   dimension: discount {
     type: number
-    sql: ${TABLE}."DISCOUNT" ;;
+    sql: ${TABLE}.`Discount` ;;
   }
   dimension_group: order {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}."ORDER_DATE" ;;
+    sql: ${TABLE}.`Order Date` ;;
   }
   dimension: postal_code {
     type: number
-    sql: ${TABLE}."POSTAL_CODE" ;;
+    sql: ${TABLE}.`Postal Code` ;;
   }
   dimension: product_id {
     type: string
-    sql: ${TABLE}."PRODUCT_ID" ;;
+    sql: ${TABLE}.`Product Id` ;;
   }
   dimension: product_name {
     type: string
-    sql: ${TABLE}."PRODUCT_NAME" ;;
+    sql: ${TABLE}.`Product Name` ;;
   }
   dimension: profit {
     type: number
-    sql: ${TABLE}."PROFIT" ;;
+    sql: ${TABLE}.`Profit` ;;
   }
   dimension: quantity {
     type: number
-    sql: ${TABLE}."QUANTITY" ;;
+    sql: ${TABLE}.`Quantity` ;;
   }
   dimension: region {
     type: string
-    sql: ${TABLE}."REGION" ;;
+    sql: ${TABLE}.`Region` ;;
   }
   dimension: row_id {
     type: number
-    sql: ${TABLE}."ROW_ID" ;;
+    sql: ${TABLE}.`Row Id` ;;
   }
   dimension: sales {
     type: number
-    sql: ${TABLE}."SALES" ;;
+    sql: ${TABLE}.`Sales` ;;
   }
   dimension: segment {
     type: string
-    sql: ${TABLE}."SEGMENT" ;;
+    sql: ${TABLE}.`Segment` ;;
   }
   dimension_group: ship {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}."SHIP_DATE" ;;
+    sql: ${TABLE}.`Ship Date` ;;
   }
   dimension: ship_mode {
     type: string
-    sql: ${TABLE}."SHIP_MODE" ;;
+    sql: ${TABLE}.`Ship Mode` ;;
   }
   dimension: state {
     type: string
-    sql: ${TABLE}."STATE" ;;
+    sql: ${TABLE}.`STATE` ;;
   }
   dimension: subcategory {
     type: string
-    sql: ${TABLE}."Sub-Category" ;;
+    sql: ${TABLE}.`Sub-Category` ;;
   }
   measure: count {
     type: count
